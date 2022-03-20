@@ -7,6 +7,7 @@ public class NumberCheckerMachine {
     public static boolean isNumberOutOfRange(int numberToCheck) {
         if (numberToCheck < LottoConfig.LOWER_RANGE || numberToCheck > LottoConfig.UPPER_RANGE) {
             System.out.println(LottoConfig.ERROR_INPUT_NUMBER);
+            return true;
         }
         return false;
     }

@@ -7,7 +7,7 @@ public class LottoConfig {
 
     public static final String INTRODUCTION = "-----LOTTO-----\n" +
             "Pict %d numbers within range %d - %d\n";
-    public static final String NUMBER_INPUT = "Please enter number: ";
+    public static final String NUMBER_INPUT = "Please enter numbers: ";
     public static final String ERROR_INPUT_NUMBER = "Number is out of range, or is duplicated.\n" +
             "Please try again: ";
     public static final String DISPLAY_NUMBERS = "%s numbers: ";

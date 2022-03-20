@@ -1,10 +1,9 @@
 package lotto.game;
 
 import lotto.NumberRanomMachine.NumberCheckerMachine;
+import lotto.NumberRanomMachine.RandomNumberGenerator;
 
-import java.util.ArrayList;
-import java.util.List;
-import java.util.Scanner;
+import java.util.*;
 
 public class LottoService {
     private List<Integer> userNumbersList;
@@ -52,7 +51,29 @@ public class LottoService {
         return countGuessedNumbers;
     }
 
+    public void fillWinningNumbers() {
+        winningNumbersList = RandomNumberGenerator.generateWinningNumbers();
+    }
 
 
+    private void displayNumbers(List<Integer> numbersToDisplay, String player) {
+        System.out.printf(LottoConfig.DISPLAY_NUMBERS,player);
+        for (Integer number : numbersToDisplay) {
+            System.out.print(number + " ");
+        }
+        System.out.println();
+    }
 
+    public void displayResult() {
+        Collections.sort(userNumbersList);
+        Collections.sort(winningNumbersList);
+        displayNumbers(userNumbersList,"Player");
+        displayNumbers(winningNumbersList,"Winning");
+        int guessNumbers = checkGuessedNumbers(userNumbersList,winningNumbersList);
+        System.out.printf(LottoConfig.DISPLAY_RESULT, guessNumbers);
+    }
+
+    public List<Integer> getUserNumbersList() {
+        return userNumbersList;
+    }
 }

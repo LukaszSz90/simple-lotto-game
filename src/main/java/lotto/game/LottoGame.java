@@ -9,8 +9,13 @@ public class LottoGame implements Game {
 
     @Override
     public void play() {
-        System.out.println(LottoConfig.INTRODUCTION);
-
-
+        System.out.printf(LottoConfig.INTRODUCTION,
+                LottoConfig.NUMBERS_IN_POOL,
+                LottoConfig.LOWER_RANGE,
+                LottoConfig.UPPER_RANGE);
+        System.out.print(LottoConfig.NUMBER_INPUT);
+        lottoService.fillUserNumbers();
+        lottoService.fillWinningNumbers();
+        lottoService.displayResult();
     }
 }
